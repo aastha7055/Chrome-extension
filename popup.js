@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Cancel button functionality
   document.querySelector('.cancel').addEventListener('click', () => {
     chrome.alarms.clear('breakReminder', () => {
+      chrome.alarms.create('breakReminder', { delayInMinutes: 45 });
       window.close();
     });
   });
