@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "BreakBuddy",
+  "version": "1.0",
+  "description": "A simple reminder to take a break every 45 minutes with a joke to boost your energy.",
+  "permissions": ["alarms", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "BreakBuddy"
+  },
+  "icons": {
+    "48": "images/image.png"
+  },
+  "options_page": "options.html"
+}

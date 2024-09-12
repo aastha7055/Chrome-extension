@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BreakBuddy Options</title>
+</head>
+<body>
+  <h1>BreakBuddy Settings</h1>
+  <p>Configure your break reminder interval:</p>
+  <input type="number" id="interval" placeholder="Minutes (default 45)" />
+  <button id="save">Save</button>
+
+  <script>
+    document.getElementById('save').addEventListener('click', () => {
+      const interval = parseInt(document.getElementById('interval').value) || 1;
+      chrome.storage.sync.set({ interval }, () => {
+        alert('Interval set to ' + interval + ' minutes');
+      });
+    });
+  </script>
+</body>
+</html>
